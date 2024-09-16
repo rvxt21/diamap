@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Podcasts,Continents,Countries
+from .models import Podcast,Continent,Countrie
 
-admin.site.register(Podcasts)
-admin.site.register(Countries)
-admin.site.register(Continents)
+admin.site.register(Podcast)
+admin.site.register(Countrie)
+admin.site.register(Continent)

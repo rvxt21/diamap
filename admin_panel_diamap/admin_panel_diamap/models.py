@@ -8,7 +8,7 @@
 from django.db import models
 
 
-class Continents(models.Model):
+class Continent(models.Model):
     continentid = models.AutoField(primary_key=True)
     continentname = models.CharField(max_length=20, blank=True, null=True)
 
@@ -17,7 +17,7 @@ class Continents(models.Model):
         db_table = 'continents'
 
 
-class Countries(models.Model):
+class Countrie(models.Model):
     countryid = models.AutoField(primary_key=True)
     countryname = models.CharField(max_length=100)
     continentid = models.ForeignKey('self', models.DO_NOTHING, db_column='continentid', blank=True, null=True)
@@ -27,7 +27,7 @@ class Countries(models.Model):
         db_table = 'countries'
 
 
-class Podcasts(models.Model):
+class Podcast(models.Model):
     podcastid = models.AutoField(primary_key=True)
     podcastname = models.CharField(max_length=100)
     duration = models.CharField(max_length=20)
@@ -35,7 +35,7 @@ class Podcasts(models.Model):
     audioname = models.CharField(max_length=100)
     photoroute = models.CharField(blank=True, null=True)
     audioroute = models.CharField(blank=True, null=True)
-    countryid = models.ForeignKey(Countries, models.DO_NOTHING, db_column='countryid')
+    countryid = models.ForeignKey(Countrie, models.DO_NOTHING, db_column='countryid')
 
     class Meta:
         managed = False

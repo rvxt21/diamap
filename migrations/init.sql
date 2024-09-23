@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS countries(
     countryId SERIAL PRIMARY KEY,
     countryName VARCHAR(100) NOT NULL,
     continentId INT,
+    flag_emoji TEXT,
     FOREIGN KEY (continentId) REFERENCES countries(countryId) ON DELETE SET NULL
 );
 

@@ -1,4 +1,4 @@
-package internal
+package enteties
 
 type Podcast struct {
 	id          uint64
@@ -20,4 +20,13 @@ type Country struct {
 type Continent struct {
 	continentId   uint64
 	continentName string
+}
+
+type PodcastShortInfo struct {
+	PodcastId    uint64
+	PodcastName  string
+	Country      string
+	CountryEmoji string
+	Duration     string
+	Photoroute   string
 }
